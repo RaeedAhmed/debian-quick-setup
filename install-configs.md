@@ -105,7 +105,7 @@ Open Tweaks from the applications menu or by running `gnome-tweaks` in the termi
 
 ## Configuring Shell
 Random assortment of utilities that I've used within first week of install:
-> `sudo apt -y install python3-setuptools git sed mpv nim fzf pydf ncdu bpytop neofetch curl nnn tldr fonts-hack fonts-dejavu streamlink python3-venv tilix zsh tmux ripgrep rsync wakeonlan nmap bat exa gnome-screenshot gthumb`
+> `sudo apt -y install python3-setuptools git sed mpv nim fzf pydf ncdu bpytop neofetch curl nnn tldr fonts-hack fonts-dejavu streamlink python3-venv kitty zsh tmux ripgrep rsync wakeonlan nmap bat exa gnome-screenshot gthumb`
 ### Zsh
 As a casual linux user I really like the defaults provided by zsh (ohmyzsh) over bash for day to day usage. 
 
@@ -130,18 +130,12 @@ Note: to apply changes you must run
 If you want to use a terminal emulator other than gnome-terminal and be able to have the dialog "open terminal here" when using nautilus, you can replace gnome-terminal:
 `sudo apt remove gnome-terminal && sudo apt install python3-nautilus`
 
-I personally use Tilix, which functions pretty similarly to gnome-terminal but with transparency and tiling multiple instances. 
-
-To use tilix, you must first create a symlink:
-> `sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh`
-
-And append the following to the end of `~/.zshrc`:
+I use kitty. You can set up a nautilus context manager for it with the following:
 ```bash
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
+pip3 install --user nautilus-open-any-terminal
+glib-compile-schemas ~/.local/share/glib-2.0/schemas/
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
 ```
-And remember to `source ~/.zshrc`
 
 ## Miscellaneous 
 ### Audio
