@@ -56,7 +56,9 @@ map ctrl+shift+q close_window
 map page_up scroll_page_up
 map page_down scroll_page_down
 enabled_layouts stack
-os_window_size 80c 24c
+initial_window_width 80c
+initial_window_height 24c
+remember_window_size yes
 sync_to_monitor yes
 map ctrl+shift+a>m set_background_opacity +0.1
 map ctrl+shift+a>l set_background_opacity -0.1
